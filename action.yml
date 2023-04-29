@@ -1,0 +1,17 @@
+name: 'Expo Fingerprint'
+description: 'Determines whether an Expo project matches a stored fingerprint'
+inputs:
+  project-path:
+    description: 'Path to your Expo project'
+    required: false
+    default: './'
+  fingerprint-path:
+    description: 'Location of your Expo fingerprint file'
+    required: false
+    default: '.expo-fingerprint.json'
+outputs:
+  matches:
+    description: 'Whether the current project hash matches the stored project hash'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
