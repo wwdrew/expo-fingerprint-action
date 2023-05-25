@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run build task based on fingerprint changes
     needs: fingerprint
-    if: ${{ needs.fingerprint.outputs.matchnes == 'false' }}
+    if: ${{ needs.fingerprint.outputs.matches == 'false' }}
     steps:
       - run: echo "Run the build command"
 
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run update task based on no fingerprint changes
     needs: fingerprint
-    if: ${{ needs.fingerprint.outputs.matchnes == 'true' }}
+    if: ${{ needs.fingerprint.outputs.matches == 'true' }}
     steps:
       - run: echo "Run the update command"
 ```
